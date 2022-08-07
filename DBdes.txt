@@ -1,0 +1,80 @@
+menu_links 8to1 menu_router
+
+menu_links - содержит ссылки в том виде, в котором в котором они появляются в блоке навигации или любом другом меню.
+menu_router - содержит информацио о каллбеках.
+
+
+custom_block 1to1/1to8 custom_block__body / custom_block_revision 8to8 custom_block_revision_body
+
+custom_block - сохраняет содержимое пользовательских блоков.
+custom_block__body - показывает тело пользовательских блоков.
+
+
+url_alias
+
+url_alias - синоним юрл.
+
+
+comment 1to8/1to8//1to1 comment_comment_body / comment_revision_comment_body // node_comment 1to8/1to8 node_revision_comment / comment_entity_statistics
+
+comment - содержит комментарии.
+comment_comment_body - тело комментариев.
+comment_revision_comment_body - хранит информацию о версии тела комментариев.
+comment_entity_statistics - сюда сохраняем запись при создании новой сущности. Если тип контента не имеет полей, то записи не создаются.
+
+
+node 1to1//1to8 node_revision 1to8 node_revision_field_image/tags/body // node_field_tags - node_field_image - node_field_data - node_field_revision - node_body - node_access
+
+node - хранит самую основную информацию для всех типов узлов в БД.
+node_revision - хранит информацию о каждой сохраненной версии узла.
+node_field_tags/image/data/revision - содержит информацию о полях.
+node_access - определяет, какими парами область/предоставление должен обладать пользователь, чтобы просматривать, обновлять или удалять определенные узлы.
+
+
+search_dataset 8to8 search_index 8to1 search_total
+
+search_dataset - содержит элементы, которые будут искать.
+search_index - сохраняет поисковый индекс и связывает слова, элементы и оценки.
+search_total - сохраняет результаты поиска.
+
+
+users - user_use_picture - user_revision_user_picture - shortcut_set_users - user_roles - user_data - sessions -- watchdog - file_managed 
+
+users - пользователи.
+user_use_picture - картинка.
+user_revision_user_picture - версии картинки.
+shortcut_set_users - ярлык.
+user_roles - роль.
+user_data - данные.
+sessions - сессии пользователей.
+
+
+taxonomy_index 8to1 taxonomy_term_data 8to8/1to8 file_usage / taxonomy_term_hierarchy
+
+taxonomy_index - поддерживает денормализованную информацию об отношениях между узлами и терминами.
+taxonomy_term_data - сохраняет информацию о терминах.
+file_usage - использование файлов.
+taxonomy_term_hierarchy - сохраняет иерархическую связь между терминами.
+
+
+cache - кэширует элементы, не разделенные в свои собственные таблицы кэша.
+cache_config - кэш конфиг.
+cache_views_info - кэширует информацию о вьюсах.
+cache_bootstrap - данные, необходимые в процессе начальной загрузки.
+cache_toolbar - кэширует информацию о меню-разработчика. 
+cache_menu - кэширует информацию о маршрутизаторе, а также сгенерированные деревья ссылок.
+cache_block - блочные модули могут кэшировать здесь уже построенные блоки.
+cache_tags - сохраняет кэшированные теги.
+cache_field - сохраняет кэшированные значения полей.
+
+
+batch - хранит сведения о пакетах. 
+queue - сохраняет элементы в очереди.
+semaphone - хранит семафоры, блокировки и флаги.
+sequences - хранит ИД.
+variable - хранит пары переменная/значение, созданные ядром Drupal или любым другим модулем или темой.
+flood - управляет порогом событий, например количеством попыток контакта.
+router - роутер.
+history - история.
+config_snapshot - 
+key_value_expire 8to1 key_value - значение ключей.
